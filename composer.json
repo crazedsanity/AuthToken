@@ -1,0 +1,15 @@
+{
+    "name": "crazedsanity/authtoken",
+    "description": "Library for creating and manipulating authentication/authorization tokens, for things like password hashes and API keys.",
+    "type": "library",
+    "require": {
+        "crazedsanity/database": "^0.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dan Falconer",
+            "email": "github@crazedsanity.com"
+        }
+    ]
+}
