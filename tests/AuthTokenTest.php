@@ -29,7 +29,7 @@ class AuthTokenTest extends crazedsanity\database\TestDbAbstract {
 	
 	
 	public function test_creation() {
-		$x = new AuthToken($this->dbObj);
+		$x = new AuthToken($this->dbObj, constant('PASSWORD_DEFAULT'));
 
 		$name = '_ToKen';
 		$value = __METHOD__;
