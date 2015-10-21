@@ -3,11 +3,13 @@
  * Created on Aug 19, 2009
  */
 
-namespace crazedsanity;
+namespace crazedsanity\authtoken;
 
-use \crazedsanity\ToolBox;
+use \crazedsanity\core\ToolBox;
+use \crazedsanity\database\Database;
+	
 
-class AuthToken extends \crazedsanity\baseAbstract {
+class AuthToken {
 	
 	/** Database object. */
 	private $db;
@@ -47,7 +49,6 @@ class AuthToken extends \crazedsanity\baseAbstract {
 	public function __construct(Database $db, $passAlgorithm=PASSWORD_DEFAULT, $nonceAlgorithm=null) {
 		
 		if(is_object($db)) {
-			parent::__construct(true);
 			$this->db = $db;
 			
 			if(!is_null($passAlgorithm) && is_numeric($passAlgorithm)) {
@@ -248,8 +249,8 @@ class AuthToken extends \crazedsanity\baseAbstract {
 			$fields = "";
 			$values = "";
 			foreach($insertData as $k=>$v) {
-				$fields = \crazedsanity\ToolBox::create_list($fields, $k);
-				$values = \crazedsanity\ToolBox::create_list($values, ':'. $k);
+				$fields = ToolBox::create_list($fields, $k);
+				$values = ToolBox::create_list($values, ':'. $k);
 			}
 			
 			if(!is_null($lifetime) && strlen($lifetime) > 0) {

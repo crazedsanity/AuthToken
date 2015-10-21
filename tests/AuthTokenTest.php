@@ -4,10 +4,10 @@
  * Created on Jan 25, 2009
  */
 
-use crazedsanity\ToolBox;
-use crazedsanity\AuthToken;
+use crazedsanity\core\ToolBox;
+use crazedsanity\authtoken\AuthToken;
 
-class AuthTokenTest extends \crazedsanity\database\TestDbAbstract {
+class AuthTokenTest extends crazedsanity\database\TestDbAbstract {
 
 	function __construct() {
 		parent::__construct();
@@ -29,7 +29,7 @@ class AuthTokenTest extends \crazedsanity\database\TestDbAbstract {
 	
 	
 	public function test_creation() {
-		$x = new \crazedsanity\AuthToken($this->dbObj);
+		$x = new AuthToken($this->dbObj);
 
 		$name = '_ToKen';
 		$value = __METHOD__;
